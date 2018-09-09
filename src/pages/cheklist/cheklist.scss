@@ -1,0 +1,113 @@
+page-cheklist {
+    ion-segment {
+      border: 1px solid #888;
+      max-width: 65%;
+    }
+
+    .segment-button:first-child {
+      max-width: 35%;
+    }
+
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+      border-color: transparent;
+      opacity: 1;
+      background-color: #3EC5DD;
+    }
+
+    .segment-md .segment-button {
+      text-transform: unset;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    #utfams-image {
+      max-width: 40%;
+      margin-top: 15px;
+      margin-left: 15px;
+    }
+
+    #ut-logo {
+      max-width: 40%;
+      position: relative;
+      right: -36px;
+    }
+    
+    .grid {
+      padding: 0;
+    }
+  
+    .col {
+      padding: 0;
+    }
+    
+    .button-md {
+      background-color: #FEFF98;
+      width: 75px; 
+      display: flex;
+      align-self: center;
+  
+      span {
+        color: #222;
+      }
+    }
+    
+    #button-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+  
+      .button-md {
+        width: 50%;
+      }
+    }
+    
+    .item-md.item-block .item-inner {
+      border-bottom: none;
+    }
+    
+    .item-md {
+      border: 1px solid #eee;
+    }
+    
+    #action {
+      background-color: #FEFF98;
+      width: 70%; 
+    }
+  
+    ion-input, ion-datetime {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      height: 80%;
+    }
+
+    ion-datetime {
+      width: 75%;
+    }
+
+    .text-input-md {
+      margin: 8px 8px;
+    }
+
+    #checklist-segment {
+      ion-row {
+        margin-bottom: 7px;
+      }
+    }
+
+    .label-checklist {
+      margin:0;
+      margin-top: 7px;
+    }
+
+    .item-block {
+      min-height: unset;
+      height: 35px;
+    }
+
+    .button-small-md {
+      height: 1.8em;
+      font-weight: normal;
+      text-transform: unset;
+      margin-left: 10px;
+    }
+}

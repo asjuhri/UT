@@ -1,0 +1,102 @@
+<!--
+  Generated template for the CreateTicketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="red">
+    <ion-buttons left>
+      <button ion-button (tap)="closeModal()" icon-only>
+        <ion-icon name="md-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Create Ticket</ion-title>
+    <ion-buttons end padding-right>
+      <button ion-button (tap)="goSend()" icon-only>
+        <ion-icon name="md-send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div style="display:flex;margin-bottom:5px">
+    <ion-checkbox [(ngModel)]="checkbox" (ionChange)="isUseBarcode()" style="flex:0;margin-right:5px"></ion-checkbox>
+    <span style="flex:1">No Barcode ?</span>
+  </div>
+  <!-- <div style="display:flex;" (click)="scanBarcode()" *ngIf="createdCode">
+    <div style="flex:1">
+     
+    </div>
+  </div> -->
+
+  <div style="display:flex;" >
+    <div style="flex:1" (click)="scanBarcode()" *ngIf="!createdCode">
+      <img src="../../assets/imgs/6381.jpg" (click)="scanBarcode()" style="border-radius:4px" />
+      <div style="text-align:center">
+        <span  (click)="scanBarcode()">Tap to Scan Barcode</span>
+      </div>
+    </div>
+    <div style="flex:1" *ngIf="createdCode">
+      <ion-card >
+        <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+        <ion-card-content>
+          <p>{{ createdCode }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div style="flex:1;padding-left: 35px;" (click)="openCamera()" >
+      <img src="../../assets/imgs/OH5IPN0.jpg" style="border-radius:4px" *ngIf="imageUri===''" />
+      <ion-card *ngIf="imageUri">
+        <ion-card-content>
+          <img [src]="imageUri"  style="border-radius:4px"  />
+        </ion-card-content>
+      </ion-card>
+      <!-- <img style="display:none;" id="largeImage" src="" /> -->
+      <div style="text-align:center">
+        <span (click)="openCamera()"  *ngIf="imageUri===''">Tap to Take Picture</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;margin-top:15px;margin-bottom:10px">
+    <span style="flex:1;align-self:center">Assign To</span>
+    <ion-input type="text" name="assign-to" [(ngModel)]="assignTo" placeholder="Assign To" style="flex:2;border:1px solid #eee;border-radius:4px"></ion-input>
+  </div>
+  <div style="display:flex">
+    <span style="flex:1;padding-top:10px">Description</span>
+    <ion-textarea type="text" name="assign-to" rows="5" [(ngModel)]="desc" placeholder="Type description incidental maintanance here.." style="flex:2;border:1px solid #eee;border-radius:4px"></ion-textarea>
+  </div>
+
+  <div *ngIf="isHidden" style="background-color: #f8f9ff;margin-top: 15px;border-radius: 5px;padding: 10px;">
+    <span style="font-weight:bold;">Deskripsi Asset</span>
+    <div style="display:flex;margin-bottom:7px;margin-top:15px">
+      <span style="flex:1;padding-top:10px;color:#666">Kode Asset</span>
+      <ion-input type="text" name="assign-to" [(ngModel)]="assetCode" style="flex:2;border:1px solid #818181;;height: 35px;border-radius:4px"></ion-input>
+    </div>
+    <div style="display:flex;margin-bottom:7px">
+      <span style="flex:1;padding-top:10px;color:#666">Serial Number</span>
+      <ion-input type="text" name="assign-to"  [(ngModel)]="scanCode"  style="flex:2;border:1px solid #818181;;height: 35px;border-radius:4px"></ion-input>
+    </div>
+    <div style="display:flex;margin-bottom:7px">
+      <span style="flex:1;padding-top:10px;color:#666">Nama Asset</span>
+      <ion-input type="text" name="assign-to" [(ngModel)]="assetName" style="flex:2;border:1px solid #818181;;height: 35px;border-radius:4px"></ion-input>
+    </div>
+    <div style="display:flex;margin-bottom:7px">
+      <span style="flex:1;padding-top:10px;color:#666">Area</span>
+      <ion-input type="text" name="assign-to" [(ngModel)]="area" style="flex:2;border:1px solid #818181;;height: 35px;border-radius:4px"></ion-input>
+    </div>
+    <div style="display:flex;margin-bottom:7px">
+      <span style="flex:1;padding-top:10px;color:#666">Gedung</span>
+      <ion-input type="text" name="assign-to" [(ngModel)]="gedung" style="flex:2;border:1px solid #818181;;height: 35px;border-radius:4px"></ion-input>
+    </div>
+    <div style="display:flex;margin-bottom:7px">
+      <span style="flex:1;padding-top:10px;color:#666">Lantai</span>
+      <ion-input type="text" name="assign-to" [(ngModel)]="lantai" style="flex:2;border:1px solid #818181;;height: 35px;border-radius:4px"></ion-input>
+    </div>
+  </div>
+</ion-content>

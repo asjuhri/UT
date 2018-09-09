@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="red">
+      <ion-buttons left>
+          <button ion-button (tap)="closeModal()" icon-only>
+            <ion-icon name="md-arrow-round-back"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>Dashboard Menu</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div style="display: flex;flex-wrap: wrap;height: 100%;align-content: center;">
+    <div class="menu-container">
+      <div tappable (tap)="toJadwalMaintanance()" class="menu-item-container">
+        <img style="max-width: 40%;margin-bottom: 10px" src="../../assets/imgs/engineering.png" />
+        <span>Regular Maintanance</span>
+      </div>
+      <div class="menu-item-container">
+        <img style="max-width: 40%;margin-bottom: 10px" src="../../assets/imgs/save-energy.png" />
+        <span>Energy Consumptions</span>
+      </div>
+      <div class="menu-item-container">
+        <img style="max-width: 40%;margin-bottom: 10px" src="../../assets/imgs/faucet.png" />
+        <span>Water Consumptions</span>
+      </div>
+    </div>
+
+    <div class="menu-container">
+      <div class="menu-item-container">
+        <img style="max-width: 40%;margin-bottom: 10px" src="../../assets/imgs/gas-pump.png" />
+        <span>Fuel Consumption</span>
+      </div>
+      <div class="menu-item-container">
+        <img style="max-width: 33%;margin-bottom: 10px" src="../../assets/imgs/presentation.png" />
+        <span>Performance Productivity</span>
+      </div>
+      <div class="menu-item-container">
+        <img style="max-width: 43%;margin-bottom: 10px" src="../../assets/imgs/stock.png" />
+        <span>Physical</span>
+        <span>Availability</span>
+      </div>
+    </div>
+
+    <div class="menu-container">
+      <div class="menu-item-container">
+        <img style="max-width: 47%;flex:0;margin-bottom: 10px" src="../../assets/imgs/comparison.png" />
+        <span>Tren</span>
+        <span>Analysis</span>
+      </div>
+      <div class="menu-item-container">
+        <img style="max-width: 40%;flex:0;margin-bottom: 10px" src="../../assets/imgs/chainsaw.png" />
+        <span>Power Quality Dasboard</span>
+      </div>
+      <div class="menu-item-container">
+        <img style="max-width: 51%;flex:0; margin-bottom: 10px" src="../../assets/imgs/question.png" />
+        <span>Help</span>
+        <span>Support</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

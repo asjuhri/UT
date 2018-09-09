@@ -1,0 +1,31 @@
+page-menus {
+  #utfams-image {
+    max-width: 40%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  #ut-logo {
+    max-width: 40%;
+    position: relative;
+    right: -36px;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: row;
+    margin-top:20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .menu-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      text-align: center;
+    }
+  }
+}

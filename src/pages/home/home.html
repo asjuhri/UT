@@ -1,0 +1,216 @@
+<!-- <ion-header>
+  <ion-navbar color="red">
+    <ion-title>Dasboard Home</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content>
+  <div>
+    <img src="../../assets/imgs/ut.png" id="utfams-image" />
+    <img src="../../assets/imgs/ut2.png" id="ut-logo" />
+  </div>
+
+  <span id="image-slide">
+    <img src="../../assets/imgs/4.jpg" alt="image">
+  </span>
+
+  <!-- <div id="eui-container">
+    <div class="eui-text" style="padding-top:10px">
+      <span>Energy Usage Intensity</span><br>
+      <span>(EUI)</span>
+    </div>
+    <div class="eui-text">
+      <span style="position: relative;top: 10px;">Energy Consumptions</span>
+    </div>
+    <div class="eui-text eui-text2">
+      <span>Water</span>
+      <span>Consumption</span>
+    </div>
+  </div> -->
+
+  <div id="chart-container">
+    <div class="chart-item" style="justify-content: flex-start;padding-left: 10px;">
+      <div class="color">
+        <div class="inner-container">
+          <div id="inner-9" style="display:flex;flex-direction: column">
+            <p style="position:relative;left:113%;padding-left:10px;margin-top:0">Boros</p>
+            <p style="position:relative;left:120%">Agak Boros</p>
+            <p style="position:relative;left:120%">Cukup Efisien</p>
+            <p style="position:relative;left:113%;padding-left:6px">Efisien</p>
+            <p style="position:relative;left:115%;padding-left:5px">Sangat Efesien</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-item">
+      <div class="color">
+        <div class="inner-container">
+          <div id="inner-1">
+            <p style="font-size: 11.5px;">10%</p>
+          </div>
+          <div id="inner-2">
+            <p style="font-size: 11.5px;">30%</p>
+          </div>
+          <div id="inner-3">
+            <p style="font-size: 11.5px;">60%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="label-color1" style="margin-left:13px">
+        <div style="display:flex;height: 10%">
+          <!-- <div style="height: 10px;width: 10px;background-color: green; "></div> -->
+          <span style="font-size: 11.5px;align-self: center">Solar</span>
+        </div>
+        <div style="display:flex;height:30%">
+          <!-- <div style="height: 10px;width: 10px;background-color: yellow; "></div> -->
+          <span style="font-size: 11.5px;align-self: center">&nbsp;Fuel</span>
+        </div>
+        <div style="display:flex;height:60%">
+          <!-- <div style="height: 10px;width: 10px;background-color: orangered; "></div> -->
+          <span style="font-size: 11.5px;align-self: center">&nbsp;PLN</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-item">
+      <div class="color">
+        <div class="inner-container">
+          <div id="inner-4">
+            <p style="font-size: 11.5px;">10%</p>
+          </div>
+          <div id="inner-5">
+            <p style="font-size: 11.5px;">15%</p>
+          </div>
+          <div id="inner-6">
+            <p style="font-size: 11.5px;">10%</p>
+          </div>
+          <div id="inner-7">
+            <p style="font-size: 11.5px;">25%</p>
+          </div>
+          <div id="inner-8">
+            <p style="font-size: 11.5px;">50%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="label-color2" style="margin-left: 4px;">
+        <div style="display:flex;height: 10%">
+          <span style="font-size: 11.5px;margin-left: 10px;align-self: center">Sungai</span>
+        </div>
+        <div style="display:flex;height:15%">
+          <span style="font-size: 11.5px;margin-left: 10px;align-self: center">Recycle</span>
+        </div>
+        <div style="display:flex;height:10%">
+          <span style="font-size: 11.5px;margin-left: 10px;align-self: center">Sumur</span>
+        </div>
+        <div style="display:flex;height: 25%;">
+          <span style="font-size: 11.5px;margin-left: 10px;align-self: center">Air Hujan</span>
+        </div>
+        <div style="display:flex;height: 50%;">
+          <span style="font-size: 11.5px;margin-left: 10px;align-self: center">PDAM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex">
+    <div style="flex:1;text-align: center;font-size: 12px;display:flex;flex-direction: column">
+      <span>Energy Usage</span>
+      <span>Intensity (EUI)</span>
+    </div>
+    <div style="flex:1;text-align: center;font-size: 12px;display:flex;flex-direction: column">
+      <span>Energy</span>
+      <span>Consumptions</span>
+    </div>
+    <div style="flex:1;text-align: center;font-size: 12px;display:flex;flex-direction: column">
+      <span>Water</span>
+      <span>Consumptions</span>
+    </div>
+    <div style="flex:0.3"></div>
+  </div>
+
+  <div style="display:flex;margin-top:10px">
+    <div style="flex:1;text-align: center;font-size: 14px;display:flex;flex-direction: column">
+      <span>80 EUI</span>
+    </div>
+    <div style="flex:1;text-align: center;font-size: 14px;display:flex;flex-direction: column">
+      <span>80 KWh</span>
+    </div>
+    <div style="flex:1;text-align: center;font-size: 14px;display:flex;flex-direction: column">
+      <span>110 M3</span>
+    </div>
+    <div style="flex:0.3"></div>
+  </div>
+
+  <!-- <div style="display:flex;margin-left: 15px;margin-right: 15px;margin-top:20px;height:11%">
+    <div style="flex:1;font-size:12px;text-align:center;border:0.5px solid #000;padding: 5px;border-top-left-radius: 5px;border-bottom-left-radius: 5px;">
+      <span style="color:#444">Energy</span>
+      <span style="color:#444">Saving</span>
+      <span style="font-size:15px;position: relative;bottom: -13%">23 %</span>
+    </div>
+    <div style="flex:1.5;font-size:11.5px;text-align:center;border:0.5px solid #000;padding: 5px">
+      <span style="color:#444">Energy Used</span>
+      <span style="color:#444">Intensity (EUI)</span><br>
+      <span style="font-size:15px;position: relative;bottom: -13%">80 EUI</span>
+    </div>
+    <div style="flex:1;font-size:12px;text-align:center;border:0.5px solid #000;padding: 5px">
+      <span style="color:#444">Energy</span>
+      <span style="color:#444">Consumptions</span>
+      <span style="font-size:15px;position: relative;bottom: -13%">80 KWH</span>
+    </div>
+    <div style="flex:1;font-size:12px;text-align:center;border:0.5px solid #000;padding: 5px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;">
+      <span style="color:#444">Water</span>
+      <span style="color:#444">Consumptions</span>
+      <span style="font-size:15px;position: relative;bottom: -13%">110 M3</span>
+    </div>
+  </div> -->
+
+
+  <div id="box-below-chart">
+    <div tappable (tap)="toUsageDetail()" style="display:flex;flex:1;flex-direction:column;align-items: center">
+      <img src="../../assets/imgs/circle.png" style="max-width:55%;margin-bottom: 10px" />
+      <!-- <span>23%</span> -->
+      <span>Energy</span>
+      <span>Saving</span>
+    </div>
+    <div tappable (tap)="toUsageDetail()" style="display:flex;flex:1;flex-direction:column;align-items: center">
+      <img src="../../assets/imgs/energy icon.png" style="max-width:55%;margin-bottom: 10px" />
+      <span>Energy</span>
+    </div>
+    <div tappable (tap)="toUsageDetail()" style="display:flex;flex:1;flex-direction:column;align-items: center">
+      <img src="../../assets/imgs/water icon.png" style="max-width:55%;margin-bottom: 10px" />
+      <span>Water</span>
+    </div>
+    <div tappable (tap)="toMenu()" style="display:flex;flex:1;flex-direction:column;align-items: center">
+      <img src="../../assets/imgs/all menu.png" style="    max-width: 41%;margin-bottom: 19%;margin-top: 7%;" />
+      <span>Menu</span>
+    </div>
+  </div>
+
+  <div style="position: absolute;bottom: -4.3%;left: 10.5%;font-size: 16px;color: #6caf45;">
+    <span>23%</span>
+  </div>
+
+  <!-- <div style="display:flex;justify-content: center;margin-top:10px">
+    <img src="../../assets//imgs/energy-saving.jpg" style="height:90px" />
+  </div> -->
+
+  <!-- <div style="display:flex">
+    <img src="../../assets/imgs/leaf.png" style="flex:0;height:50px" />
+    <div style="flex:0;display: flex;flex-direction: column;font-size: 12px">
+      <span>Energy</span>
+      <span>Saving</span>
+    </div>
+    <div style="flex:0;display:flex">
+      <span>23</span>
+      <span>%</span>
+    </div>
+  </div> -->
+
+  <!-- <div id="energy-saving-container"> -->
+  <!-- <img src="../../assets/imgs/energy_saving.jpg " id="energy-saving" /> -->
+  <!-- <span id="persen-energy-saving">23%</span> -->
+  <!-- </div> -->
+</ion-content>

@@ -1,0 +1,56 @@
+page-approval-tiket {
+  ion-segment {
+    border: 1px solid #888;
+    max-width: 65%;
+  }
+
+  .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: transparent;
+    opacity: 1;
+    background-color: #3EC5DD;
+  }
+
+  .segment-md .segment-button {
+    text-transform: unset;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  #utfams-image {
+    max-width: 40%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  #ut-logo {
+    max-width: 40%;
+    position: relative;
+    right: -36px;
+  }
+
+  #input-container {
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    margin-top: -16px;
+    height: 38px;
+
+    ion-input {
+      border: 1px solid #eee;
+      border-radius: 20px;
+    }
+
+    .text-input-md {
+      margin-top: 3px;
+      margin-left: 30px;
+    }
+
+    ion-icon {
+      right: 90%;
+      top: 24%;
+      position: relative;
+    }
+  }
+}

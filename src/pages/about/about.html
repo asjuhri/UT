@@ -1,0 +1,186 @@
+<ion-header>
+  <ion-navbar color="red">
+    <ion-title *ngIf="!isSearching">Message</ion-title>
+    <ion-buttons *ngIf="!isSearching" end>
+      <button ion-button (tap)="openSearchBox($event)" icon-only padding-right>
+        <ion-icon md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end padding-right>
+      <button ion-button (tap)="openPopup($event)" icon-only>
+        <ion-icon name="md-funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+    <div style="display:flex" *ngIf="isSearching">
+      <ion-icon tappable (tap)="closeSearchBox()" name="md-arrow-round-back" style=" color: #fff;font-size: 2em;align-self: center;padding-left: 10px;"></ion-icon>
+      <ion-input name="n" type="text" [(ngModel)]="searchMsg" (change)="goSearchMsg()" placeholder="Search Message" style="margin-left:10px"></ion-input>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngFor="let item of items">
+    <div  tappable (tap)="toMessageDetail($event,item)" style="display:flex;padding-left: 15px;padding-right: 15px;padding-top:15px; padding-bottom: 10px;border-bottom: 1px solid #eee">
+      <div style="flex: 1.5;display: flex;flex-direction: column">
+        <div style="display:flex;flex:1;margin-bottom: 5px;">
+          <span style="flex: 2;font-size:18px">{{item.from}}</span>
+          <span style="flex: 1;align-self:flex-end;font-size:12px;text-align:right">{{item.createDate}}</span>
+        </div>
+        <div style="flex:1;margin-bottom: 3px">
+          <span style="color: #333">{{item.subject}}</span>
+        </div>
+        <div style="display:flex;flex:1">
+          <span style="flex: 2;color:#333">{{item.content}}</span>
+          <ion-icon name="ios-star-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <ion-fab right bottom>
+    <button ion-fab color="red" (tap)="toCreateMessage()">
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+<!-- <ion-header no-border>
+  <div>
+    <img src="../../assets/imgs/ut.png" id="utfams-image" />
+    <img src="../../assets/imgs/ut2.png" id="ut-logo" />
+  </div>
+  <div padding style="display: flex;justify-content: center;">
+    <ion-segment [(ngModel)]="whichSegment" (ionChange)="onSegmentChange($event)">
+      <ion-segment-button value="first" style="color: black" icon-left>
+        List Message
+        <div style="margin-top: -20px !important; "></div>
+      </ion-segment-button>
+      <ion-segment-button value="second" icon-left style="color:black">
+        Create
+        <div style="margin-top: -20px !important; "></div>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!isCreateMessage" id="input-container">
+    <ion-input type="text" placeholder="Search Message"></ion-input>
+    <ion-icon name="search"></ion-icon>
+  </div>
+
+  <div *ngIf="whichSegment==='first'">
+    <div id="list-container">
+      <span style="font-size: 19px">Supervisor Maintanace</span><br>
+      <span>Perbaikan Ruangan Server</span><br>
+      <div style="display:flex">
+        <span style="flex:2.8;padding-top: 6px">Jum'at, 17 Agustus 2018</span>
+        <button ion-button color="secondary" small round style="flex:1;height: 1.5em;text-transform:unset;background-color: #0ef50f;">Read</button>
+      </div>
+    </div>
+    <div id="list-container">
+      <span style="font-size: 19px;font-weight:500">Helena</span><br>
+      <span style="font-weight:500">Perbaikan Ruang Gedung</span><br>
+      <div style="display:flex">
+        <span style="font-weight:bold;flex:2.8;padding-top: 6px">Selasa, 20 Agustus 2018</span>
+        <button ion-button color="secondary" small round style="flex:1;height: 1.5em;text-transform:unset;background-color: #fe0000;">Unread</button>
+      </div>
+    </div>
+    <div id="list-container">
+      <span style="font-size: 19px;font-weight: 500">Didik Maintanace</span><br>
+      <span style="font-weight: 500">AC Tidak Dingin</span><br>
+      <div style="display:flex">
+        <span style="flex:2.8;padding-top: 6px;font-weight: 500">Senin, 19 Agustus 2018</span>
+        <button ion-button color="secondary" small round style="flex:1;height: 1.5em;text-transform:unset;background-color: #fe0000;">Unread</button>
+      </div>
+    </div>
+
+    <ion-fab right bottom>
+      <button ion-fab color="maroon" (tap)="toSecondSegment()"><ion-icon name="md-create"></ion-icon></button> -->
+<!-- </ion-fab> -->
+<!-- <ion-item>
+      <ion-card color="blueman">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>Supervisior Maintenance</ion-col>
+              <ion-col col-4 style="padding-left: 40px">
+                <button class="btn-read" ion-button round style="min-width: 100px; height: 20px ;" color="blues" (click)="status('Finish')">Read</button>
+              </ion-col>
+            </ion-row>
+            <ion-row>Perbaikan Ruang Server</ion-row>
+            <ion-row> Selasa , 20 Agustus 2018</ion-row>
+          </ion-grid>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card color="blueman">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>Warehouse</ion-col>
+              <ion-col col-4 style="padding-left: 40px">
+                <button ion-button round style="min-width: 100px;height: 20px ;  " (click)="status('Pending')" color="danger">Pending</button>
+              </ion-col>
+            </ion-row>
+            <ion-row>Penambahan Ruang gudang</ion-row>
+            <ion-row> Selasa , 20 Agustus 2018</ion-row>
+          </ion-grid>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card color="blueman">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>GA</ion-col>
+              <ion-col col-4 style="padding-left: 40px">
+                <button ion-button round style="min-width: 100px;height: 20px ;" color="secondary" (click)="status('On Progress')">On
+                  Progress
+                </button>
+              </ion-col>
+            </ion-row>
+            <ion-row>AC Tidak Dingin</ion-row>
+            <ion-row> Selasa , 20 Agustus 2018</ion-row>
+          </ion-grid>
+        </ion-card-header>
+      </ion-card>
+    </ion-item> -->
+<!-- </div> -->
+
+<!-- secon pragment activ -->
+<!-- <div *ngIf="whichSegment==='second'">
+    <ion-grid id="create">
+      <ion-row>
+        <ion-col col-5>
+          <p>To</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text" placeholder=""></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Subject</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Descriptions</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-textarea placeholder="Enter a description" rows="9"></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <span id="button-container">
+      <button class="btn-mssg" ion-button (click)="send('Send')">Send Message</button>
+    </span>
+  </div>
+</ion-content> -->

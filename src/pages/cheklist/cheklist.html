@@ -1,0 +1,332 @@
+<ion-header no-border>
+  <div>
+    <img src="../../assets/imgs/ut.png" id="utfams-image" />
+    <img src="../../assets/imgs/ut2.png" id="ut-logo" />
+  </div>
+  <div padding style="display: flex;justify-content: center;">
+    <ion-segment [(ngModel)]="whichSegment" (ionChange)="onSegmentChange($event)">
+      <ion-segment-button value="first" style="color: black" icon-left>
+        Data
+        <div style="margin-top: -20px !important; "></div>
+      </ion-segment-button>
+      <ion-segment-button value="second" icon-left style="color:black">
+        Checklist Asset
+        <div style="margin-top: -20px !important; "></div>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="whichSegment==='second'">
+    <ion-grid id="checklist-segment">
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Panel Kontrol</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small (click)="status('Finish')">Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Indikator-Indikato</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Body Genset</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Panel Operasi</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Instalasi Kabel</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Grounding</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Tuas Breaker</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Emergency Stop</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Pelindung Kipas</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Silincer</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Peredam Getaran</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">Circuit Breaker</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <p class="label-checklist">AVR</p>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Good</ion-label>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button round small>Detail</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <span id="button-container">
+      <button ion-button (click)="status('Finish')">Selesai</button>
+    </span>
+  </div>
+
+  <!-- secon pragment activ -->
+  <div *ngIf="whichSegment==='first'">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <p>Take Picture</p>
+        </ion-col>
+        <ion-col col-7>
+          <button ion-button round small id="action">Action</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Take Barcode</p>
+        </ion-col>
+        <ion-col col-7>
+          <button ion-button round small id="action">Action</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Kode Asset</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Serial Number</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Nama Asset</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Tanggal Pembelian</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Area</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Gedung</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Lantai</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <span id="button-container">
+      <button ion-button (click)="status('Finish')">Halaman Berikut</button>
+    </span>
+  </div>
+</ion-content>

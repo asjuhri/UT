@@ -1,0 +1,7 @@
+{
+  "name": "UT",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

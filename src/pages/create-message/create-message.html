@@ -1,0 +1,43 @@
+<!--
+  Generated template for the CreateMessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="red">
+    <ion-buttons  left>
+        <button ion-button (tap)="closeModal()" icon-only>
+          <ion-icon  ios="ios-arrow-back" md="md-arrow-back" ></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title padding-center>Create Message</ion-title>
+    <ion-buttons end padding-right>
+      <button ion-button (tap)="goSend()" icon-only>
+        <ion-icon name="md-send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div style="display:flex;border-bottom: 1px solid #eee;">
+    <p style="flex:1;color: #666">From</p>
+    <!-- <p style="flex:2">Eko Bag. Warehouse</p> -->
+    <ion-input type="text" [(ngModel)]="from" name="From" placeholder="From"></ion-input>
+  </div>
+
+  <div style="border-bottom: 1px solid #eee;">
+    <ion-input type="text" [(ngModel)]="SendTo" name="SendTo" placeholder="Send To"></ion-input>
+  </div>
+
+  <div style="border-bottom: 1px solid #eee;">
+    <ion-input type="text" name="subject" [(ngModel)]="Subject" placeholder="Subject"></ion-input>
+  </div>
+
+  <div>
+    <ion-input type="text" name="content" [(ngModel)]="Content" placeholder="Create Message"></ion-input>
+  </div>
+</ion-content>

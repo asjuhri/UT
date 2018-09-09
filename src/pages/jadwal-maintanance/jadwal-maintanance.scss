@@ -1,0 +1,48 @@
+page-jadwal-maintanance {
+  #utfams-image {
+    max-width: 40%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  #ut-logo {
+    max-width: 40%;
+    position: relative;
+    right: -36px;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 25px 0 20px 0;
+  }
+
+  ion-title{
+    color: #FDD400;
+  }
+
+  #input-container {
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    margin-top: -16px;
+    height: 38px;
+
+    ion-input {
+      border: 1px solid #eee;
+      border-radius: 20px;
+    }
+
+    .text-input-md {
+      margin-top: 3px;
+      margin-left: 30px;
+    }
+
+    ion-icon {
+      right: 90%;
+      top: 24%;
+      position: relative;
+    }
+  }
+}

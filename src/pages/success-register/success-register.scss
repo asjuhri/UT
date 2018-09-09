@@ -1,0 +1,31 @@
+page-success-register {
+  #image-container {
+		display: flex;
+    justify-content: center;
+		margin-top: 20%;
+		
+		img {
+			height: 150px;
+		}
+  }
+
+  #image-success-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    
+    img {
+			height: 130px;
+		}
+  }
+
+  #button-container {
+		display: flex;
+		justify-content: center;
+		margin-top: 35px;
+
+		.button-md {
+			color: #000;
+		}
+	}
+}

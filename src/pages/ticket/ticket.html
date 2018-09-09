@@ -1,0 +1,222 @@
+<ion-header>
+  <ion-navbar color="red">
+    <ion-title *ngIf="!isSearching">List Ticket</ion-title>
+    <ion-buttons *ngIf="!isSearching" end>
+      <button ion-button (tap)="openSearchBox($event)" icon-only padding-right>
+        <ion-icon md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end padding-right>
+      <button ion-button (tap)="openPopup($event)" icon-only>
+        <ion-icon name="md-funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+    <div style="display:flex" *ngIf="isSearching">
+      <ion-icon tappable (tap)="closeSearchBox()" name="md-arrow-round-back" style=" color: #fff;font-size: 2em;align-self: center;padding-left: 10px;"></ion-icon>
+      <ion-input name="n" type="text" [(ngModel)]="searchTicket" (change)="goSearchTciket()" placeholder="Search Ticket" style="margin-left:10px"></ion-input>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of items">
+    <div style="display:flex;padding:10px;border-bottom: 1px solid #eee;">
+      <div style="flex:0.5">
+        <img [src]="item.uriImge" width="145px" height="100px" style="border-radius:4px" />
+      </div>
+      <div style="flex:1;margin-left:10px">
+        <div style="display:flex;flex-direction:column;">
+          <span style="flex:1;font-size:20px;margin-bottom:5px">{{item.ticketAssign}}</span>
+          <span style="flex:1;font-size:15px;color:#666;margin-bottom:2px">{{item.ticketDesc}}</span>
+          <span>#{{item.ticketNo}}</span>
+          <div style="display:flex;flex:1">
+            <span style="flex:2;font-size:12px;color: #DC4437">{{item.createDate}}</span>
+            <!-- <span style="flex:1">Finished</span> -->
+            <ion-badge *ngIf="item.ticketSatatus=='0'" item-end color="blueman">New Ticket</ion-badge>
+            <ion-badge *ngIf="item.ticketSatatus=='1'" item-end color="badge-yellow">On Progress</ion-badge>
+            <ion-badge *ngIf="item.ticketSatatus=='2'" item-end color="badge-green">Finished</ion-badge>
+            <ion-badge *ngIf="item.ticketSatatus=='3'" item-end color="badge-red">Pending</ion-badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <ion-fab right bottom>
+    <button ion-fab color="red" (tap)="toCreateTicket()">
+      <ion-icon name="md-create"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+
+<!-- <ion-header no-border>
+  <div>
+    <img src="../../assets/imgs/ut.png" id="utfams-image" />
+    <img src="../../assets/imgs/ut2.png" id="ut-logo" />
+  </div>
+  <div padding style="display: flex;justify-content: center;">
+    <ion-segment [(ngModel)]="whichSegment" (ionChange)="onSegmentChange($event)">
+      <ion-segment-button value="first" style="color: black" icon-left>
+        List Ticket
+        <div style="margin-top: -20px !important; "></div>
+      </ion-segment-button>
+      <ion-segment-button value="second" icon-left style="color:black">
+        Create Ticket
+        <div style="margin-top: -20px !important; "></div>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header> -->
+
+<!-- <ion-content padding>
+  <div *ngIf="whichSegment==='first'">
+    <div id="list-container">
+      <div style="display:flex">
+        <span style="flex:2.8;font-size: 19px;font-weight: 500">IT Support</span><br>
+        <button ion-button color="secondary" small round style="flex:1;height: 1.5em;text-transform:unset;background-color: #0ef50f;">Finished</button>
+      </div>
+      <span>Perbaikan Ruangan Server</span><br>
+      <span style="padding-top: 6px">Jum'at, 17 Agustus 2018</span>
+    </div>
+    <div id="list-container">
+      <div style="display:flex">
+        <span style="flex:2.8;font-size: 19px;font-weight:500">Warehouse</span><br>
+        <button ion-button color="secondary" id="pending" small round style="flex:1;height: 1.5em;text-transform:unset;background-color: #fe0000;">Pending</button>
+      </div>
+      <span>Penambahan Ruang Gedung</span><br>
+      <span>Selasa, 20 Agustus 2018</span>
+    </div>
+    <div id="list-container">
+      <div style="display:flex">
+        <span style="flex:2.8;font-size: 19px;font-weight: 500">GA</span><br>
+        <button ion-button color="secondary" small round style="flex:1;height: 1.5em;text-transform:unset;background-color: yellow;">On
+          Progress
+        </button>
+      </div>
+      <span style="font-weight: 500">AC Tidak Dingin</span><br>
+      <span style="padding-top: 6px">Senin, 19 Agustus 2018</span>
+    </div>
+
+    <ion-fab right bottom>
+      <button ion-fab color="maroon" (tap)="toSecondSegment()"><ion-icon name="md-create"></ion-icon></button>
+    </ion-fab>
+  </div> -->
+
+<!-- secon pragment activ -->
+<!-- <div *ngIf="whichSegment==='second'">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <p>Take Picture</p>
+        </ion-col>
+        <ion-col col-7>
+          <button ion-button round small id="action">Action</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Take Barcode</p>
+        </ion-col>
+        <ion-col col-7>
+          <button ion-button round small id="action">Action</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Type Ticket</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text" placeholder=""></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Asign To</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Kode Asset</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Nama Asset</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Serial Number</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Tanggal Pembelian</p>
+        </ion-col>
+        <ion-col col-7> -->
+<!-- <ion-item> -->
+<!-- <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime> -->
+<!-- </ion-item> -->
+<!-- </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Area</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Gedung</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Lantai</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Deskripsi</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input type="text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <p>Info Lain</p>
+        </ion-col>
+        <ion-col col-7>
+          <ion-textarea type="text"></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <span id="button-container">
+      <button ion-button class="btn-submit" (click)="status('Finish')">Submit Ticket</button>
+    </span>
+  </div>
+</ion-content> -->
